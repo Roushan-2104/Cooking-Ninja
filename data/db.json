@@ -1,0 +1,72 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "title": "Veggie Stew",
+      "ingredients": [
+        "1 Carrot",
+        "1 Leek",
+        "200g Tofu",
+        "300ml Veg stock"
+      ],
+      "method": "1. Pre-heat the oven to 200C/3C/gas 5. Place the carrot, leek and tofu in a large bowl. Add the stock and mix well. 2. Add the rest of the ingredients and mix well. 3. Place the mixture in a large bowl and cover with a lid. 4. Place the lid on the oven and cook for 40 minutes. 5. Serve with a slaw of your choice",
+      "cookingTime": "45 minutes",
+      "foodImage": "https://www.mapsofindia.com/ci-moi-images/my-india/2014/10/Kerala-Vegetable-Stew-665x487.jpg"
+    },
+    {
+      "id": "2",
+      "title": "Veggie Pizza",
+      "ingredients": [
+        "1 Base",
+        "Tomata pasata",
+        "1 Green pepper",
+        "100g Mushrooms"
+      ],
+      "method": "1. Pre-heat the oven to 200C/3C/gas 5. Add the pasata, green pepper and mushrooms to the base. Place the lid on the oven and cook for 30 minutes. 5. Serve with a slaw of your choice",
+      "cookingTime": "35 minutes",
+      "foodImage": "https://www.killingthyme.net/wp-content/uploads/2020/09/veggie-deluxe-pizza-5.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Greek Salad",
+      "ingredients": [
+        "1 Onion",
+        "1 Block of Feta",
+        "Olives",
+        "Tomatoes",
+        "Olive Oil"
+      ],
+      "method": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse minima ex rem quis similique eum ratione quaerat, voluptas molestias ut repudiandae delectus voluptates. Eius esse at tenetur ab accusamus excepturi?",
+      "cookingTime": "35 minutes",
+      "foodImage": "https://www.inspiredtaste.net/wp-content/uploads/2020/02/Best-Greek-Salad-Recipe-1200-1200x800.jpg"
+    },
+    {
+      "title": "Mushroom Pie",
+      "ingredients": [
+        "mushroom",
+        "salt",
+        "pie",
+        "sugar",
+        "cheese",
+        "choclate"
+      ],
+      "cookingTime": "40 minutes",
+      "foodImage": "https://static01.nyt.com/images/2021/01/11/dining/aw-mushroom-pot-pie/aw-mushroom-pot-pie-articleLarge-v3.jpg",
+      "method": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\noptio, eaque rerum! Provident similique accusantium nemo autem. Veritatis\nobcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam\nnihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,",
+      "id": "95uFgSU"
+    },
+    {
+      "title": "ChickPea Curry",
+      "ingredients": [
+        "kuch bhi",
+        "bhi",
+        "kuch",
+        "nhi"
+      ],
+      "cookingTime": "1 minutes",
+      "foodImage": "https://eadn-wc02-3894996.nxedge.io/cdn/wp-content/uploads/2018/04/creamy-chickpea-curry-4-scaled.jpg",
+      "method": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,\nmolestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum\nnumquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium\noptio, eaque rerum! Provident similique accusantium nemo autem. Veritatis\nobcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam\nnihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,",
+      "id": "NZijU09"
+    }
+  ]
+}
