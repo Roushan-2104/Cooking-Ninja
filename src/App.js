@@ -5,10 +5,12 @@ import Create from './pages/Create/Create';
 import Home from './pages/Home/Home';
 import Search from './pages/Search/Search';
 import Recipe from './pages/Recipe/Recipe';
+import {useTheme} from './hooks/useTheme'
 
 function App() {
+  const {mode} = useTheme()
   return (
-    <div className="App">
+    <div className={`App ${mode}`}>
         <Navbar/>
         <div className='Comp'>
           <Routes>

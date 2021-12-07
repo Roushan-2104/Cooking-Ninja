@@ -2,8 +2,10 @@ import './Recipe.css'
 import {useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import useFetch from '../../hooks/useFetch'
+import { useTheme } from '../../hooks/useTheme'
 
 export default function Recipe() {
+    const {mode} = useTheme()
     const {id} = useParams()
     const url =`http://localhost:3000/recipes/${id}`
     const { data: recipe, isPending, error } = useFetch(url)
@@ -19,7 +21,7 @@ export default function Recipe() {
     },[error, history])
 
     return (
-        <div>
+        <div className={`recipe ${mode}`}>
            {isPending && 
                 <div className='loading'>
                     <em><b>Loading ...</b></em>
@@ -31,7 +33,7 @@ export default function Recipe() {
                 </div>
             }
             {recipe && (
-                <div className='recipe'>
+                <div>
                     <img src={recipe.foodImage} width='70%' />
                     <h2 className='page-title'>{recipe.title}</h2>
                     <p>Takes {recipe.cookingTime} to cook.</p>

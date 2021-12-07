@@ -4,3 +4,6 @@
 .Comp{
   padding: 10px;
 }
+.App.dark {
+  background: #333;
+}
