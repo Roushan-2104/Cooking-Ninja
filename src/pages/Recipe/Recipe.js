@@ -1,14 +1,16 @@
 import './Recipe.css'
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import useFetch from '../../hooks/useFetch'
 import { useTheme } from '../../hooks/useTheme'
+import { projectFirestore } from '../../firebase/config'
 
 export default function Recipe() {
     const {mode} = useTheme()
+
     const {id} = useParams()
-    const url =`http://localhost:3000/recipes/${id}`
-    const { data: recipe, isPending, error } = useFetch(url)
+    const [data, setData] = useState(null)
+    const [isPending, setIsPending] = useState(false)
+    const [error, setError] = useState(false)
     const history = useNavigate()
 
     useEffect(() => {
@@ -19,6 +21,29 @@ export default function Recipe() {
             }, 2000);
         }
     },[error, history])
+
+    useEffect(() => {
+        setIsPending(true)
+        
+        const unsub = projectFirestore.collection('recipes').doc(id).onSnapshot((doc)=> {
+            if(doc.exists){
+                setIsPending(false)
+                setData(doc.data())
+            }else{
+                setIsPending(false)
+                setError('Could not find that recipe')
+            }
+        }, (err) => {
+            setError(err.message)
+            setIsPending(false)
+        })
+        return () => unsub()
+    }, [id])
+    const handleClick = () => {
+        projectFirestore.collection('recipes').doc(id).update({
+            title:'Something Completely Different'
+        })
+    }
 
     return (
         <div className={`recipe ${mode}`}>
@@ -32,17 +57,18 @@ export default function Recipe() {
                     <b>Errorrrrrr !!!!</b>
                 </div>
             }
-            {recipe && (
+            {data && (
                 <div>
-                    <img src={recipe.foodImage} width='70%' />
-                    <h2 className='page-title'>{recipe.title}</h2>
-                    <p>Takes {recipe.cookingTime} to cook.</p>
+                    <img src={data.foodImage} width='70%' alt={data.title} />
+                    <h2 className='page-title'>{data.title}</h2>
+                    <p>Takes {data.cookingTime} to cook.</p>
                     <ul>
-                        {recipe.ingredients.map((ingredients) => (
+                        {data.ingredients.map((ingredients) => (
                             <li key={ingredients}>{ingredients}</li>
                         ))}
                     </ul>
-                    <p className="method">{recipe.method}</p>
+                    <p className="method">{data.method}</p>
+                    <button className='btn' onClick={handleClick} >Update me </button>
                 </div>
             )}
         </div>
